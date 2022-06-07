@@ -61,7 +61,7 @@ def predict_vitals(args):
     save_dir = os.path.join(save_dir, str(model_name))
 
     print("path:  ",sample_data_path)
-    if sample_data_path[-4:] == ".avi":
+    if sample_data_path[-4:] == ".avi" or sample_data_path[-4:] == ".mp4":
         dXsub, fps = preprocess_raw_video(sample_data_path, dim=36)
     else: 
         dXsub, fps = preprocess_raw_frames(sample_data_path, dim=36)
